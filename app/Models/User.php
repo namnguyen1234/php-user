@@ -17,16 +17,6 @@ class User extends Model
 
     public $str_search;
 
-    public function __construct()
-    {
-        parent::__construct();
-
-        if (isset($_GET['username']) && !empty($_GET['username'])) {
-            $username = addslashes($_GET['username']);
-            $this->str_search .= " AND users.username LIKE '%$username%'";
-        }
-    }
-
     public function hasUser($data)
     {
         $obj_select = $this->connection 
